@@ -1,0 +1,32 @@
+[{
+        "label": "Play"
+    },
+    {
+        "label": "Pause"
+    },
+    {
+        "label": "Clear"
+    },
+    {
+        "label": "Slwow"
+    },
+    {
+        "label": "Fast"
+    },
+    {
+        "label": "Seed"
+    },
+    {
+        "label": "Greed size",
+        "subMenu": {
+            "50x30": {
+                "rows": "50",
+                "cols": "30"
+            },
+            "30x10": {
+                "rows": "50",
+                "cols": "10"
+            }
+        }
+    }
+]

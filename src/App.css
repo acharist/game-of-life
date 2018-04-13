@@ -1,0 +1,225 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+html {
+    height: 100%;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+    line-height: 1;
+    height: 100%;
+    background-color: #FEF9E2;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+@keyframes move-slide-left {
+    0% {
+        transform: translateX(0%);
+    } 100% {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes move-slide-right {
+    0% {
+        transform: translateX(-100%);
+    } 100% {
+        transform: translateX(0%);
+    }
+}
+
+.slide-left {
+    animation: move-slide-left .4s ease-in-out normal;
+    animation-fill-mode: forwards;
+}
+
+.slide-right {
+    animation: move-slide-right .4s ease-in-out normal forwards;
+}
+
+.sidebar {
+    min-width: 320px;
+    max-width: 320px;
+    height: 100vh;
+    background-color: #89E4AF;
+    position: fixed;
+    transform: translateX(-100%);
+    top: 0;
+    left: 0;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+}
+
+.sidebar::after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: -60px;
+    width: 350px;
+    height: 350px;
+    z-index: -2;
+    background: url('img/plant.svg') no-repeat center;
+}
+
+.sidebar-container {
+    height: 100%;
+    min-width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    padding: 70px 0;
+}
+
+.sidebar-container nav ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sidebar .title {
+    font-family: 'Open sans', sans-serif;
+    font-weight: 700;
+    color: #fff;
+    font-size: 2.5rem;
+    width: 100%;
+}
+
+.sidebar li {
+    margin-bottom: 20px;
+}
+
+.sidebar button {
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.toggle-sidebar {
+    position: absolute;
+}
+
+.toggle-sidebar li {
+    width: 20px;
+    height: 20px;
+}
+
+.hamburger {
+    position: absolute;
+    outline: none;
+    top: 0;
+    left: 0;
+}
+
+.btn-light-color.is-active .hamburger-inner,
+.btn-light-color.is-active .hamburger-inner:after,
+.btn-light-color .hamburger-inner:before,
+.btn-light-color .hamburger-inner:after,
+.btn-light-color .hamburger-inner {
+    background-color: #fff;
+}
+
+.btn-dark-color.is-active .hamburger-inner,
+.btn-dark-color.is-active .hamburger-inner:after,
+.btn-dark-color .hamburger-inner:before,
+.btn-dark-color .hamburger-inner:after,
+.btn-dark-color .hamburger-inner {
+    background-color: #3a3a3a;
+}
+
+.app .hamburger-inner:before {
+    top: -6px;
+}
+
+.app .hamburger-inner:after {
+    bottom: -6px;
+}
+
+.app .hamburger-inner, .hamburger-inner:after, .hamburger-inner:before,
+.hamburger-inner, .hamburger-inner:after, .hamburger-inner:before {
+    width: 22px !important;
+    height: 2px !important;
+}
+
+.project-info {
+    color: #fff;
+    font-family: 'Open sans', sans-serif;
+    font-size: 1rem;
+}
+
+.project-info span {
+    font-weight: 700;
+}
+
+#root {
+    width: 100%;
+    height: 100%;
+}
+
+.app {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.box {
+    border: 1px solid #f3e7af;
+    box-sizing: border-box;
+    margin: 1px;
+}
+
+.box:hover {
+    background-color: #f3e7af;
+}
+
+.on {
+    background-color: #f3e7af;
+}
