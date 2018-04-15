@@ -223,3 +223,33 @@ table {
 .on {
     background-color: #f3e7af;
 }
+
+.drop-down {
+    position: relative;
+}
+
+.drop-down ul {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translateX(100%);
+    background-color: rgba(83, 223, 141, 0.83);
+    padding: 22px;
+
+}
+
+.nav .drop-down ul {
+    display: none;
+}
+
+.drop-down ul li:last-child {
+    margin-bottom: 0;
+}
+
+.drop-down ul button {
+    color: #fff;
+}
+
+.nav .drop-down:hover ul {
+    display: block !important;
+}

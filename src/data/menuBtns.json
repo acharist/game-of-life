@@ -8,7 +8,7 @@
         "label": "Clear"
     },
     {
-        "label": "Slwow"
+        "label": "Slow"
     },
     {
         "label": "Fast"
@@ -18,15 +18,17 @@
     },
     {
         "label": "Greed size",
-        "subMenu": {
-            "50x30": {
+        "subMenu": [
+            {
+                "label": "50x30",
                 "rows": "50",
                 "cols": "30"
             },
-            "30x10": {
+             {
+                "label": "50x10",
                 "rows": "50",
                 "cols": "10"
             }
-        }
+        ]
     }
 ]
