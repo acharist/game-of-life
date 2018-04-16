@@ -12,7 +12,7 @@ class App extends Component {
 
 		this.speed = 100;
 		this.rows = 30;
-		this.cols = 60;
+		this.cols = 50;
 
 		this.state = {
 			toggler: 'hidden',
@@ -25,7 +25,13 @@ class App extends Component {
 		this.selectBox = this.selectBox.bind(this);
 		this.seed = this.seed.bind(this);
 		this.play = this.play.bind(this);
+
+		this.playBtn = this.playBtn.bind(this);
+		this.pauseBtn = this.pauseBtn.bind(this);
+		this.slowBtn = this.slowBtn.bind(this);
+		this.fastBtn = this.fastBtn.bind(this);
 		this.clearBtn = this.clearBtn.bind(this);
+		this.sizeBtn = this.sizeBtn.bind(this);
 	}
 
 	toggleSidebar() {
@@ -109,11 +115,34 @@ class App extends Component {
 
 		this.setState({
 			gridFull: updateGrid
-		})
+		});
 
 	}
 
+	playBtn() {
+		clearInterval(this.intervalId);
+
+		this.intervalId = setInterval(() => {
+			this.play();
+		}, this.speed);
+	}
+
+	pauseBtn() {
+		clearInterval(this.intervalId);
+	}
+	
+	slowBtn() {
+		this.speed = 1000;
+		this.playBtn()
+	}
+	
+	fastBtn() {
+		this.speed = 100;
+		this.playBtn();
+	}
+
 	seed() {
+		this.pauseBtn();
 		let updateGrid = copyGrid(this.state.gridFull);
 		for (let i = 0; i < this.rows; i++) {
 			for (let j = 0; j < this.cols; j++) {
@@ -126,22 +155,33 @@ class App extends Component {
 	}
 
 	clearBtn() {
+		clearInterval(this.intervalId);
 		this.setState({
 			gridFull: Array(this.rows).fill(Array(this.cols).fill(false))
 		})
 	}
 
-	playButton() {
-		clearInterval(this.intervalId);
+	sizeBtn(size) {
+		switch(size) {
+			case '0':
+				this.rows = 50;
+				this.cols = 70;
+				break;
+			case '1':
+				this.rows = 30;
+				this.cols = 50;
+				break;
+			default:
+				this.rows = 10;
+				this.cols = 30;
+		}
 
-		this.intervalId = setInterval(() => {
-			this.play();
-		}, this.speed);
+		this.clearBtn();
 	}
 
 	componentDidMount() {
 		this.seed();
-		this.playButton();
+		this.playBtn();
 	}
 
 	render() {
@@ -156,7 +196,13 @@ class App extends Component {
 					toggler={this.toggleSidebar}
 					isToggle={this.state.toggler}
 					btns={Btns}
+					playBtn={this.playBtn} 
+					pauseBtn={this.pauseBtn}
 					clearBtn={this.clearBtn}
+					slowBtn={this.slowBtn} 
+					fastBtn={this.fastBtn} 
+					seedBtn={this.seed}
+					sizeBtn={this.sizeBtn}
 				/>
 				<Grid
 					gridFull={this.state.gridFull}

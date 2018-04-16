@@ -4,7 +4,7 @@ import Menu from './Menu';
 import Title from './Title';
 import ToggleSidebarButton from './ToggleSidebarButton';
 
-const Sidebar = ({ toggler, isToggle, clearBtn, btns }) => {
+const Sidebar = ({ toggler, isToggle, playBtn, pauseBtn, clearBtn, slowBtn, fastBtn, seedBtn, sizeBtn, btns }) => {
 
     function handleState() {
         toggler();
@@ -26,7 +26,13 @@ const Sidebar = ({ toggler, isToggle, clearBtn, btns }) => {
             <div className="sidebar-container">
                 <Title name={'Game of life'} className={'title'} />
                 <Menu
-                    clearBtn={clearBtn} 
+                    playBtn={playBtn}
+                    pauseBtn={pauseBtn}
+                    clearBtn={clearBtn}
+                    slowBtn={slowBtn}
+                    fastBtn={fastBtn}
+                    seedBtn={seedBtn}
+                    sizeBtn={sizeBtn}
                     btns={btns}/>
                 <p className="project-info">Made with <span>React</span> by Amallanc</p>
             </div>

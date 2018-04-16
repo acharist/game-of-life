@@ -4,8 +4,8 @@ import Box from './Box';
 
 class Grid extends Component {
 	render() {
-        const width = this.props.cols * 24;
-        const height = this.props.rows * 24;
+        const width = this.props.cols * 14;
+        const height = this.props.rows * 14;
         const rowsArr = [];
 
         let boxClass = '';
@@ -20,8 +20,8 @@ class Grid extends Component {
                         key={boxId}
                         row={i}
                         col={j}
-                        width={22}
-                        height={22}
+                        width={12}
+                        height={12}
                         selectBox={this.props.selectBox}
                 />)
             }

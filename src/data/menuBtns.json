@@ -20,14 +20,13 @@
         "label": "Greed size",
         "subMenu": [
             {
-                "label": "50x30",
-                "rows": "50",
-                "cols": "30"
+                "label": "70x50"
             },
              {
-                "label": "50x10",
-                "rows": "50",
-                "cols": "10"
+                "label": "50x30"
+            },
+            {
+                "label": "30x10"
             }
         ]
     }
