@@ -15,7 +15,7 @@ class App extends Component {
 		this.cols = 50;
 
 		this.state = {
-			toggler: 'hidden',
+			toggle: 'hidden',
 			color: true,
 			generations: 0,
 			gridFull: Array(this.rows).fill(Array(this.cols).fill(false))
@@ -36,7 +36,7 @@ class App extends Component {
 
 	toggleSidebar() {
 		this.setState({
-			toggler: !this.state.toggler
+			toggle: !this.state.toggle
 		});
 	}
 
@@ -188,13 +188,13 @@ class App extends Component {
 		return (
 			<div className="app">
 				<ToggleSidebarButton
-					toggler={this.toggleSidebar}
-					isToggle={this.state.toggler}
+					toggle={this.toggleSidebar}
+					isToggle={this.state.toggle}
 					color={this.state.color}
 				/>
 				<Sidebar
-					toggler={this.toggleSidebar}
-					isToggle={this.state.toggler}
+					toggle={this.toggleSidebar}
+					isToggle={this.state.toggle}
 					btns={Btns}
 					playBtn={this.playBtn} 
 					pauseBtn={this.pauseBtn}

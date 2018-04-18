@@ -4,10 +4,10 @@ import Menu from './Menu';
 import Title from './Title';
 import ToggleSidebarButton from './ToggleSidebarButton';
 
-const Sidebar = ({ toggler, isToggle, playBtn, pauseBtn, clearBtn, slowBtn, fastBtn, seedBtn, sizeBtn, btns }) => {
+const Sidebar = ({ toggle, isToggle, playBtn, pauseBtn, clearBtn, slowBtn, fastBtn, seedBtn, sizeBtn, btns }) => {
 
     function handleState() {
-        toggler();
+        toggle();
     }
 
     function isClicked() {
@@ -22,7 +22,7 @@ const Sidebar = ({ toggler, isToggle, playBtn, pauseBtn, clearBtn, slowBtn, fast
 
     return (
         <div className={`sidebar ${isClicked()}`}>
-            <ToggleSidebarButton toggler={handleState} isToggle={isToggle} />
+            <ToggleSidebarButton toggle={handleState} isToggle={isToggle} />
             <div className="sidebar-container">
                 <Title name={'Game of life'} className={'title'} />
                 <Menu

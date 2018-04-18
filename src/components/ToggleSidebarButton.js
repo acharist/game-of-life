@@ -1,9 +1,9 @@
 import React from 'react';
 
-const ToggleSidebarButton = ({ toggler, isToggle, color }) => {
+const ToggleSidebarButton = ({ toggle, isToggle, color }) => {
 
     function handleState() {
-        toggler();
+        toggle();
     }
 
     return (
