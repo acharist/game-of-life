@@ -52,62 +52,62 @@ class App extends Component {
 		let originalGrid = this.state.gridFull;
 		let updateGrid = copyGrid(this.state.gridFull);
 
-		for(let i = 0; i < this.rows; i++) {
-			for(let j = 0; j < this.cols; j++) {
+		for (let i = 0; i < this.rows; i++) {
+			for (let j = 0; j < this.cols; j++) {
 				let count = 0;
-				if(i > 0) {
-					if(originalGrid[i - 1][j]) {
+				if (i > 0) {
+					if (originalGrid[i - 1][j]) {
 						count++;
 					}
 				}
 
-				if(i > 0 && j > 0) {
-					if(originalGrid[i - 1][j - 1]) {
+				if (i > 0 && j > 0) {
+					if (originalGrid[i - 1][j - 1]) {
 						count++;
 					}
 				}
 
-				if(i > 0 && j < this.cols - 1) {
-					if(originalGrid[i - 1][j + 1]) {
+				if (i > 0 && j < this.cols - 1) {
+					if (originalGrid[i - 1][j + 1]) {
 						count++;
 					}
 				}
 
-				if(j < this.cols - 1) {
-					if(originalGrid[i][j + 1]) {
+				if (j < this.cols - 1) {
+					if (originalGrid[i][j + 1]) {
 						count++;
 					}
 				}
 
-				if(j > 0) {
-					if(originalGrid[i][j - 1]) {
+				if (j > 0) {
+					if (originalGrid[i][j - 1]) {
 						count++;
 					}
 				}
 
-				if(i < this.rows - 1) {
-					if(originalGrid[i + 1][j]) {
+				if (i < this.rows - 1) {
+					if (originalGrid[i + 1][j]) {
 						count++;
 					}
 				}
 
-				if(i < this.rows - 1 && j > 0) {
-					if(originalGrid[i + 1][j - 1]) {
+				if (i < this.rows - 1 && j > 0) {
+					if (originalGrid[i + 1][j - 1]) {
 						count++;
 					}
 				}
 
-				if(i < this.rows - 1 && j < this.cols - 1) {
-					if(originalGrid[i + 1][j + 1]) {
+				if (i < this.rows - 1 && j < this.cols - 1) {
+					if (originalGrid[i + 1][j + 1]) {
 						count++;
 					}
 				}
 
-				if(originalGrid[i][j] && (count < 2 || count > 3)) {
+				if (originalGrid[i][j] && (count < 2 || count > 3)) {
 					updateGrid[i][j] = false;
 				}
 
-				if(!originalGrid[i][j] && count === 3) {
+				if (!originalGrid[i][j] && count === 3) {
 					updateGrid[i][j] = true;
 				}
 			}
@@ -130,28 +130,30 @@ class App extends Component {
 	pauseBtn() {
 		clearInterval(this.intervalId);
 	}
-	
+
 	slowBtn() {
 		this.speed = 1000;
 		this.playBtn()
 	}
-	
+
 	fastBtn() {
 		this.speed = 100;
 		this.playBtn();
 	}
 
 	seed() {
-		this.pauseBtn();
-		let updateGrid = copyGrid(this.state.gridFull);
-		for (let i = 0; i < this.rows; i++) {
-			for (let j = 0; j < this.cols; j++) {
-				updateGrid[i][j] = (Math.floor(Math.random() * 5)) === 4 ? !updateGrid[i][j] : updateGrid[i][j]; //25% chance
+		this.clearBtn();
+		setTimeout(() => {
+			let updateGrid = copyGrid(this.state.gridFull);
+			for (let i = 0; i < this.rows; i++) {
+				for (let j = 0; j < this.cols; j++) {
+					updateGrid[i][j] = (Math.floor(Math.random() * 5)) === 4 ? !updateGrid[i][j] : updateGrid[i][j]; //25% chance
+				}
 			}
-		}
-		this.setState({
-			gridFull: updateGrid
-		})
+			this.setState({
+				gridFull: updateGrid
+			})
+		}, 0)
 	}
 
 	clearBtn() {
@@ -162,7 +164,7 @@ class App extends Component {
 	}
 
 	sizeBtn(size) {
-		switch(size) {
+		switch (size) {
 			case '0':
 				this.rows = 50;
 				this.cols = 70;
@@ -196,11 +198,11 @@ class App extends Component {
 					toggle={this.toggleSidebar}
 					isToggle={this.state.toggle}
 					btns={Btns}
-					playBtn={this.playBtn} 
+					playBtn={this.playBtn}
 					pauseBtn={this.pauseBtn}
 					clearBtn={this.clearBtn}
-					slowBtn={this.slowBtn} 
-					fastBtn={this.fastBtn} 
+					slowBtn={this.slowBtn}
+					fastBtn={this.fastBtn}
 					seedBtn={this.seed}
 					sizeBtn={this.sizeBtn}
 				/>
