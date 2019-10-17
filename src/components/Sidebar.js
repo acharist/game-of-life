@@ -5,7 +5,6 @@ import Title from './Title';
 import ToggleSidebarButton from './ToggleSidebarButton';
 
 const Sidebar = ({ toggle, isToggle, playBtn, pauseBtn, clearBtn, slowBtn, fastBtn, seedBtn, sizeBtn, btns }) => {
-
     function handleState() {
         toggle();
     }
@@ -34,7 +33,7 @@ const Sidebar = ({ toggle, isToggle, playBtn, pauseBtn, clearBtn, slowBtn, fastB
                     seedBtn={seedBtn}
                     sizeBtn={sizeBtn}
                     btns={btns}/>
-                <p className="project-info">Made with <span>React</span> by Amallanc</p>
+                <p className="project-info">Made with <span>React</span> by Acharist</p>
             </div>
         </div>
     )

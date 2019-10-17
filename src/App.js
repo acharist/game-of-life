@@ -1,15 +1,12 @@
 import React, { Component } from 'react';
-
 import Sidebar from './components/Sidebar';
 import ToggleSidebarButton from './components/ToggleSidebarButton';
 import Grid from './components/Grid';
-
 import Btns from './data/menuBtns';
 
 class App extends Component {
 	constructor(props) {
 		super(props);
-
 		this.speed = 100;
 		this.rows = 30;
 		this.cols = 50;
@@ -42,10 +39,10 @@ class App extends Component {
 
 	selectBox(row, col) {
 		let updateGrid = copyGrid(this.state.gridFull);
-		updateGrid[row][col] = !updateGrid[row][col]
+		updateGrid[row][col] = !updateGrid[row][col];
 		this.setState({
 			gridFull: updateGrid
-		})
+		});
 	}
 
 	play() {
@@ -157,7 +154,6 @@ class App extends Component {
 	}
 
 	clearBtn() {
-		clearInterval(this.intervalId);
 		this.setState({
 			gridFull: Array(this.rows).fill(Array(this.cols).fill(false))
 		})

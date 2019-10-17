@@ -1,7 +1,6 @@
 import React from 'react';
 
 const ToggleSidebarButton = ({ toggle, isToggle, color }) => {
-
     function handleState() {
         toggle();
     }

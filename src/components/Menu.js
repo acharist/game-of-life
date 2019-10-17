@@ -1,7 +1,6 @@
 import React from 'react';
 
 const Menu = ({ playBtn, pauseBtn, clearBtn, slowBtn, fastBtn, seedBtn, sizeBtn, btns }) => {
-
     function handlePlay() {
         playBtn();
     }

@@ -1,7 +1,6 @@
 import React from 'react';
 
 const Box = ({ boxClass, row, col, selectBox, width, height }) => {
-    
     function handleClick() {
         selectBox(row, col);    
     }

@@ -4,8 +4,8 @@
   "private": true,
   "dependencies": {
     "hamburgers": "^0.9.3",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0",
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2",
     "react-scripts": "1.1.1"
   },
   "scripts": {
